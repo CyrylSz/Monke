@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://sols7y8c8j60"]
+
+[ext_resource type="Script" path="res://scripts/Monke_player.gd" id="1_dycv1"]
+[ext_resource type="Texture2D" uid="uid://dhv8yig1k2blh" path="res://graphics/Monke1.png" id="2_b6ge6"]
+[ext_resource type="Texture2D" uid="uid://cfhyutihk60yw" path="res://graphics/banana.png" id="3_j5fer"]
+[ext_resource type="Script" path="res://scripts/Banana_image.gd" id="4_tdtry"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6f6sh"]
+radius = 63.75
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_qibd5"]
+polygon = PackedVector2Array(-51, 51, 50, 53, 51, -53, -51, -52)
+
+[node name="Monke_player" type="CharacterBody2D"]
+script = ExtResource("1_dycv1")
+
+[node name="Monke_image" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_b6ge6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.8, 0.8)
+shape = SubResource("CircleShape2D_6f6sh")
+
+[node name="Banana_image" type="Sprite2D" parent="."]
+position = Vector2(7, 31)
+scale = Vector2(0.096, 0.096)
+texture = ExtResource("3_j5fer")
+script = ExtResource("4_tdtry")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_qibd5")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(59, 0)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

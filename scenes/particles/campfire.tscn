@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://bkr4oe6ulrmob"]
+
+[ext_resource type="Texture2D" uid="uid://d8dpfqg1f7ji" path="res://graphics/unlit_campfire.png" id="1_atd4i"]
+[ext_resource type="Texture2D" uid="uid://dnj24okqyk4kp" path="res://graphics/fire_particle_big.png" id="2_vb8pi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xee1v"]
+radius = 157.051
+
+[sub_resource type="Gradient" id="Gradient_fbutu"]
+offsets = PackedFloat32Array(0, 0.64977, 0.866359, 0.995392)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.172549, 0.0768358, 0.0768358, 0.0768358, 0.287037, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_jvgy8"]
+gradient = SubResource("Gradient_fbutu")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_n7wg4"]
+emission_shape = 1
+emission_sphere_radius = 48.06
+particle_flag_disable_z = true
+gravity = Vector3(40, -100, 0)
+initial_velocity_min = 0.5
+initial_velocity_max = 1.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+tangential_accel_min = -62.8
+tangential_accel_max = 75.44
+scale_min = 0.1
+scale_max = 0.3
+color_ramp = SubResource("GradientTexture1D_jvgy8")
+
+[node name="Campfire" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 40)
+scale = Vector2(0.3, 0.3)
+shape = SubResource("CircleShape2D_xee1v")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 50)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_atd4i")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(0, 35)
+scale = Vector2(0.3, 0.3)
+amount = 25
+process_material = SubResource("ParticleProcessMaterial_n7wg4")
+texture = ExtResource("2_vb8pi")
+lifetime = 2.0

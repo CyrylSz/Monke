@@ -1,0 +1,166 @@
+[gd_scene load_steps=16 format=3 uid="uid://b5kscx43x6sh7"]
+
+[ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_gumxc"]
+[ext_resource type="Texture2D" uid="uid://cbmgv014hcyvs" path="res://graphics/floor/floor3.jpg" id="2_2qxrg"]
+[ext_resource type="PackedScene" uid="uid://q342s6i7ex16" path="res://scenes/environment/beach.tscn" id="3_bouk5"]
+[ext_resource type="PackedScene" uid="uid://ds1fbrn2uc8am" path="res://scenes/environment/bamboo_hut.tscn" id="5_a26tu"]
+[ext_resource type="PackedScene" uid="uid://ihjie0g8nsuo" path="res://scenes/enemies/enemy_monke1.tscn" id="5_hvcm6"]
+[ext_resource type="Texture2D" uid="uid://cl47y1l7cqgi3" path="res://graphics/tilemaps/outside_walls.png" id="7_g14vc"]
+[ext_resource type="PackedScene" uid="uid://dn68hkkp33v1c" path="res://scenes/environment/banana_basket.tscn" id="7_k6pe3"]
+[ext_resource type="PackedScene" uid="uid://sols7y8c8j60" path="res://scenes/Monke_player.tscn" id="7_uu3h3"]
+[ext_resource type="PackedScene" uid="uid://bfmd28r658gye" path="res://scenes/environment/Rock.tscn" id="8_nl5qu"]
+[ext_resource type="Texture2D" uid="uid://5y2n43do6xq8" path="res://graphics/tilemaps/soil.png" id="8_tq7lq"]
+[ext_resource type="PackedScene" uid="uid://bkr4oe6ulrmob" path="res://scenes/particles/campfire.tscn" id="9_y2sf8"]
+[ext_resource type="PackedScene" uid="uid://bcauitiokddkj" path="res://scenes/Lights/small_light.tscn" id="10_t6ap5"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xf83q"]
+resource_name = "walls"
+texture = ExtResource("7_g14vc")
+texture_region_size = Vector2i(300, 300)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-51.7956, -50.9117, 40.8354, -49.4975, 41.189, -45.9619, 150, -43.8406, 150, 45.2548, 41.189, 44.5477, 41.189, 49.1439, -51.7956, 48.7904)
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-150, -45.4316, -150, 45.7852, 150, 44.9013, 150, -45.6084)
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(51.7956, -50.9117, -40.8354, -49.4975, -41.189, -45.9619, -150, -43.8406, -150, 45.2548, -41.189, 44.5477, -41.189, 49.1439, 51.7956, 48.7904)
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(50.9117, -51.7956, 49.4975, 40.8354, 45.9619, 41.189, 43.8406, 150, -45.2548, 150, -44.5477, 41.189, -49.1439, 41.189, -48.7904, -51.7956)
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-47.1994, 48.0833, -45.0781, 48.4368, -45.4316, 150, 45.7852, 150, 45.4316, 44.9013, 150, 45.2548, 150, -45.6084, 47.1994, -45.9619, 47.1994, -49.851, -46.8458, -50.5581)
+2:1/0 = 0
+2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:1/0/physics_layer_0/angular_velocity = 0.0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(47.1994, 48.0833, 45.0781, 48.4368, 45.4316, 150, -45.7852, 150, -45.4316, 44.9013, -150, 45.2548, -150, -45.6084, -47.1994, -45.9619, -47.1994, -49.851, 46.8458, -50.5581)
+0:2/0 = 0
+0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:2/0/physics_layer_0/angular_velocity = 0.0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(45.4316, -150, -45.7852, -150, -44.9013, 150, 45.6084, 150)
+1:2/0 = 0
+1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:2/0/physics_layer_0/angular_velocity = 0.0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-47.1994, -48.0833, -45.0781, -48.4368, -45.4316, -150, 45.7852, -150, 45.4316, -44.9013, 150, -45.2548, 150, 45.6084, 47.1994, 45.9619, 47.1994, 49.851, -46.8458, 50.5581)
+2:2/0 = 0
+2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:2/0/physics_layer_0/angular_velocity = 0.0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(47.1994, -48.0833, 45.0781, -48.4368, 45.4316, -150, -45.7852, -150, -45.4316, -44.9013, -150, -45.2548, -150, 45.6084, -47.1994, 45.9619, -47.1994, 49.851, 46.8458, 50.5581)
+0:3/0 = 0
+0:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:3/0/physics_layer_0/angular_velocity = 0.0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(50.9117, 51.7956, 49.4975, -40.8354, 45.9619, -41.189, 43.8406, -150, -45.2548, -150, -44.5477, -41.189, -49.1439, -41.189, -48.7904, 51.7956)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ureg3"]
+resource_name = "soil"
+texture = ExtResource("8_tq7lq")
+texture_region_size = Vector2i(300, 300)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+2:1/0 = 0
+2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:1/0/physics_layer_0/angular_velocity = 0.0
+0:2/0 = 0
+0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:2/0/physics_layer_0/angular_velocity = 0.0
+1:2/0 = 0
+1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:2/0/physics_layer_0/angular_velocity = 0.0
+2:2/0 = 0
+2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:2/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSet" id="TileSet_u4cfc"]
+tile_size = Vector2i(300, 300)
+physics_layer_0/collision_layer = 4
+physics_layer_0/collision_mask = 11
+sources/4 = SubResource("TileSetAtlasSource_xf83q")
+sources/5 = SubResource("TileSetAtlasSource_ureg3")
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_gumxc")
+
+[node name="Static" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Static"]
+texture_repeat = 2
+position = Vector2(592, 286)
+scale = Vector2(0.54, 0.54)
+texture = ExtResource("2_2qxrg")
+region_enabled = true
+region_rect = Rect2(-1141.25, -652.115, 5267.13, 4861.73)
+
+[node name="Beach" parent="Static" instance=ExtResource("3_bouk5")]
+position = Vector2(-105, -47)
+scale = Vector2(1.221, 1.221)
+
+[node name="Rock" parent="Static" instance=ExtResource("8_nl5qu")]
+position = Vector2(375, 153)
+
+[node name="Banana_basket" parent="Static" instance=ExtResource("7_k6pe3")]
+position = Vector2(370, 382)
+
+[node name="Bamboo_hut" parent="Static" instance=ExtResource("5_a26tu")]
+position = Vector2(968, 492)
+
+[node name="TileMap" type="TileMap" parent="Static"]
+tile_set = SubResource("TileSet_u4cfc")
+format = 2
+layer_0/name = "Soil"
+layer_0/tile_data = PackedInt32Array(196607, 65541, 0, 131075, 65541, 0, 131076, 65541, 0, 196606, 65541, 0, 131072, 65541, 0, 131077, 65541, 0, 131078, 131077, 0, 196605, 5, 0, 262141, 5, 1, 262142, 65541, 1, 262143, 65541, 1, 196608, 65541, 1, 196609, 65541, 1, 196610, 65541, 1, 196611, 65541, 1, 196612, 65541, 1, 196613, 65541, 1, 196614, 131077, 1, 131074, 65541, 0, 131073, 65541, 0, 262149, 65541, 2, 262148, 65541, 2, 262147, 65541, 2, 262146, 65541, 2, 262145, 65541, 2, 262144, 65541, 2, 327679, 65541, 2, 327678, 65541, 2, 262150, 131077, 2, 327677, 5, 2)
+layer_1/name = "Walls"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 0
+layer_1/tile_data = PackedInt32Array(-1, 65540, 1, -65532, 131076, 1, 131076, 131076, 2, 196607, 65540, 2, 131072, 65540, 0, 131073, 65540, 0, 131074, 65540, 0, 131075, 65540, 0, -65533, 65540, 0, -65534, 65540, 0, -65535, 65540, 0, -65536, 65540, 0, 4, 4, 2, 65540, 4, 2, 131071, 4, 2, 65535, 4, 2)
+
+[node name="Campfire" parent="Static" instance=ExtResource("9_y2sf8")]
+position = Vector2(-26, 584)
+
+[node name="Small_light" parent="Static" instance=ExtResource("10_t6ap5")]
+position = Vector2(1246, -51)
+
+[node name="Enemy_monke" parent="." instance=ExtResource("5_hvcm6")]
+position = Vector2(107, 71)
+collision_layer = 2
+collision_mask = 15
+
+[node name="Monke_player" parent="." instance=ExtResource("7_uu3h3")]
+position = Vector2(740, 237)
+collision_mask = 31
+
+[node name="Camera2D" type="Camera2D" parent="Monke_player"]
+position_smoothing_enabled = true
+
+[node name="Projectiles" type="Node2D" parent="."]
+position = Vector2(61, 61)
+
+[node name="Sunset_light_effect" type="DirectionalLight2D" parent="."]
+color = Color(0.27451, 1, 1, 0.141176)
+blend_mode = 1
+
+[connection signal="plus_one_banana" from="Static/Banana_basket" to="." method="_on_banana_basket_plus_one_banana"]
+[connection signal="one_banana_thrown" from="Monke_player" to="." method="_on_monke_player_one_banana_thrown"]
+[connection signal="one_kokos_throw" from="Monke_player" to="." method="_on_monke_player_one_kokos_throw"]

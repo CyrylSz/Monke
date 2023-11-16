@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://olyfa5qnbxca"]
+
+[ext_resource type="Script" path="res://scenes/projectiles/flying_coconut.gd" id="1_5isbx"]
+[ext_resource type="Texture2D" uid="uid://ckn76drbqwt7i" path="res://graphics/coconut.png" id="1_pkghr"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_rht00"]
+friction = 8.0
+bounce = 8.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_34g3g"]
+radius = 33.0
+height = 88.0
+
+[node name="Flying_coconut" type="RigidBody2D"]
+collision_layer = 8
+collision_mask = 15
+physics_material_override = SubResource("PhysicsMaterial_rht00")
+gravity_scale = 0.0
+linear_damp = 1.0
+script = ExtResource("1_5isbx")
+
+[node name="Coconut" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_pkghr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_34g3g")

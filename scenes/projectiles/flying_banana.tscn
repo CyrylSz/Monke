@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0pjdyrc8xwhy"]
+
+[ext_resource type="Texture2D" uid="uid://cfhyutihk60yw" path="res://graphics/banana.png" id="1_grptc"]
+[ext_resource type="Script" path="res://scenes/projectiles/flying_banana.gd" id="1_nacov"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fet00"]
+radius = 19.9231
+height = 100.324
+
+[node name="Flying_banana" type="Area2D"]
+collision_layer = 8
+collision_mask = 7
+script = ExtResource("1_nacov")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.096, 0.096)
+texture = ExtResource("1_grptc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-6, 11)
+rotation = 2.04029
+shape = SubResource("CapsuleShape2D_fet00")

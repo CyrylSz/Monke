@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://ihjie0g8nsuo"]
+
+[ext_resource type="Script" path="res://scenes/enemies/enemy_monke1.gd" id="1_3jokd"]
+[ext_resource type="Texture2D" uid="uid://etd1yk7u4kec" path="res://graphics/Enemy_pirate_monke.png" id="2_52h8e"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2t2q3"]
+radius = 51.0098
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_c5tsr"]
+polygon = PackedVector2Array(-31, 64, -21, 55, -17, 46, 31, 46, 42, 41, 52, 24, 56, 23, 56, 17, 19, 24, 15, 5, 6, -16, 17, -14, 22, -17, 21, -24, 12, -27, 10, -29, 17, -41, 21, -51, 13, -51, 3, -42, -11, -46, -20, -44, -28, -35, -35, -26, -42, -24, -43, -19, -41, -12, -28, -16, -39, 11, -39, 28, -56, 28, -49, 41, -41, 48, -28, 48, -31, 52, -35, 60)
+
+[node name="enemy_monke1" type="CharacterBody2D"]
+script = ExtResource("1_3jokd")
+
+[node name="EnemyPirateMonke" type="Sprite2D" parent="."]
+scale = Vector2(0.23, 0.23)
+texture = ExtResource("2_52h8e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_2t2q3")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_c5tsr")

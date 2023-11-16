@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://ds1fbrn2uc8am"]
+
+[ext_resource type="Texture2D" uid="uid://cepwoexv53o1m" path="res://graphics/bamboo_hut.png" id="1_rm1gb"]
+
+[node name="Bamboo_hut" type="StaticBody2D"]
+
+[node name="BambooHut" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_rm1gb")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-154, 43, -9, -85, 149, 45, -9, 145)
